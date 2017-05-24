@@ -1,0 +1,67 @@
+<div class="jumbotron">
+  <p>Search using the form below</p>
+  <form>
+    <div class="form-group">
+      <div class="input-group">
+        <ng2-completer  class="form-control" name="searchCtrl" [dataService]="dataService" [minSearchLength]="3" [placeholder]="placeholder" [clearSelected]="true"
+                       [textSearching]="waitText" (selected)="onSelected($event)" [(ngModel)]="searchStr" (keyup.enter)="search($event)">
+        </ng2-completer>
+        <span class="input-group-btn">
+          <button class="btn btn-primary" type="button" (click)="search($event)">Go!</button>
+        </span>
+      </div>
+      <!-- /input-group -->
+    </div>
+  </form>
+</div>
+<div *ngIf="products.length>0 && showProducts">
+  <h3 class="orange-text">Search Results</h3>
+  <p>{{totalResults}} results found for &ldquo;{{searchStr}}&rdquo;</p>
+  <div class="row is-flex">
+    <div class="col-sm-6 col-md-4 col-lg-3 col-xs-6" *ngFor="let product of products; let i = index;">
+      <div class="thumbnail">
+        <img [src]="product['Main Image']" class="img-thumbnail" *ngIf='product["Main Image"] !== ""'>
+        <img src="http://i1.adis.ws/i/searsca/5343920_P_M;http://i1.adis.ws/i/searsca/5343920_P_T00010120_M" class="img-thumbnail" *ngIf="product['Main Image'] === ''">
+        <div class="caption">
+          <p><strong>Product Name: </strong>{{product["Product Name"]}}</p>
+          <p><strong>Product Description: </strong>{{product["Product Description"]}}</p>
+          <p><strong>Colour: </strong>{{product["Colour"]}}</p>
+          <p><strong>Size: </strong>{{product["Size"]}}</p>
+          <p><strong>Fit: </strong>{{product["Fit"]}}</p>
+          <p>
+            <a href="#" (click)="viewProductDetails(i)" >View details &raquo;</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row" *ngIf="selectedProduct">
+  <div class="col-md-4">
+    <img [src]='selectedProduct["Main Image"]' class="img-thumbnail" *ngIf='selectedProduct["Main Image"] !== ""' >
+    <img src="http://i1.adis.ws/i/searsca/5343920_P_M;http://i1.adis.ws/i/searsca/5343920_P_T00010120_M" class="img-thumbnail" *ngIf='selectedProduct["Main Image"] === ""'>
+  </div>
+  <div class="col-md-8">
+    <h2>{{selectedProduct["Product Name"]}}
+    </h2>
+    <p>
+      {{selectedProduct["Product Description"]}}
+    </p>
+    <p><strong>Colour: </strong>{{selectedProduct["Colour"]}}</p>
+    <p><strong>Colour Family : </strong>{{selectedProduct["Colour Family"]}}</p>
+    <p><strong>Size: </strong>{{selectedProduct["Size"]}}</p>
+    <p><strong>Fit: </strong>{{selectedProduct["Fit"]}}</p>
+    <p>
+      <a href="#" (click)="goBack()" >&laquo; Back</a>
+    </p>
+  </div>
+  <div class="col-md-4">
+    <p>
+      <a href="#" class="btn btn-info btn-block">Add to Cart</a>
+    </p>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,9 @@
+:host >>> img.completer-image{
+  height:42px !important;
+  width:42px !important;
+}
+
+:host >>> input.completer-input{
+  width: 100%;
+  border-width: 0;
+}
