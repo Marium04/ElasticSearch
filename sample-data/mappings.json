@@ -1,0 +1,208 @@
+{
+  "settings": {
+    "analysis": {
+      "filter": {
+        "autocomplete_filter": {
+          "type": "edge_ngram",
+          "min_gram": 3,
+          "max_gram": 20,
+          "token_chars":[
+            "letter",
+            "digit"
+          ]
+        }
+      },
+      "tokenizer":{
+        "edge_ngram_tokenizer":{
+          "type":"edgeNGram",
+          "min_gram":3,
+          "max_gram":20,
+          "token_chars":[
+            "letter",
+            "digit"
+          ]
+        }
+      },
+      "analyzer": {
+        "autocomplete": {
+          "type": "custom",
+          "tokenizer": "edge_ngram_tokenizer",
+          "filter": [
+            "lowercase",
+            "asciifolding",
+            "autocomplete_filter"
+          ]
+        }
+      }
+    }
+  },
+  "mappings": {
+    "women": {
+      "_all": {
+        "search_analyzer": "standard",
+        "analyzer": "autocomplete"
+      },
+      "properties": {
+        "<Object Type Name>": {
+          "type": "text",
+          "index": "not_analyzed",
+          "include_in_all": false
+        },
+        "<ID>": {
+          "type": "text",
+          "include_in_all": false
+        },
+        "<Parent ID>": {
+          "type": "text",
+          "include_in_all": false
+        },
+        "Legacy ID": {
+          "type": "text",
+          "include_in_all": false
+        },
+        "Product Name": {
+          "type": "text",
+          "include_in_all": true,
+          "search_analyzer": "standard",
+          "analyzer": "autocomplete"
+        },
+        "Product Description": {
+          "type": "text",
+          "include_in_all": true,
+          "search_analyzer": "standard",
+          "analyzer": "autocomplete"
+        },
+        "Marketing Copy": {
+          "type": "text",
+          "include_in_all":false,
+          "search_analyzer": "standard",
+          "analyzer": "autocomplete"
+        },
+        "Size": {
+          "type": "keyword",
+          "include_in_all":true,
+          "index": true
+        },
+        "Fit": {
+          "type": "text",
+          "include_in_all":true,
+          "search_analyzer": "standard",
+          "analyzer": "autocomplete"
+        },
+        "Colour": {
+          "type": "text",
+          "include_in_all": true,
+          "search_analyzer": "standard",
+          "analyzer": "autocomplete"
+        },
+        "Colour Family": {
+          "type": "text",
+          "include_in_all": true,
+          "search_analyzer": "standard",
+          "analyzer": "autocomplete"
+        },
+        "Inseam or Other size": {
+          "type": "text",
+          "include_in_all": true,
+          "analyzer": "autocomplete",
+          "search_analyzer": "standard"
+        },
+        "Bottom Style": {
+          "type": "text",
+          "include_in_all": true,
+          "analyzer": "autocomplete",
+          "search_analyzer": "standard"
+        },
+        "Panel Style": {
+          "type": "text",
+          "include_in_all": true,
+          "analyzer": "autocomplete",
+          "search_analyzer": "standard"
+        },
+        "Pant Style": {
+          "type": "text",
+          "include_in_all": true,
+          "analyzer": "autocomplete",
+          "search_analyzer": "standard"
+        },
+        "Rise": {
+          "type": "text",
+          "include_in_all": true,
+          "analyzer": "autocomplete",
+          "search_analyzer": "standard"
+        },
+        "Fabric": {
+          "type": "text",
+          "include_in_all": true,
+          "analyzer": "autocomplete",
+          "search_analyzer": "standard"
+        },
+        "Main Image": {
+          "type": "text",
+          "index":"not_analyzed",
+          "include_in_all":false
+        },
+        "Bullet 01": {
+          "type": "text",
+          "include_in_all":false,
+          "analyzer": "autocomplete",
+          "search_analyzer": "standard"
+        },
+        "Bullet 02": {
+          "type": "text",
+          "include_in_all":false,
+          "analyzer": "autocomplete",
+          "search_analyzer": "standard"
+        },
+        "Bullet 03": {
+          "type": "text",
+          "include_in_all":false,
+          "analyzer": "autocomplete",
+          "search_analyzer": "standard"
+        },
+        "Bullet 04": {
+          "type": "text",
+          "include_in_all":false,
+          "analyzer": "autocomplete",
+          "search_analyzer": "standard"
+        },
+        "Bullet 05": {
+          "type": "text",
+          "include_in_all":false,
+          "analyzer": "autocomplete",
+          "search_analyzer": "standard"
+        },
+        "Bullet 06": {
+          "type": "text",
+          "include_in_all":false,
+          "analyzer": "autocomplete",
+          "search_analyzer": "standard"
+        },
+        "Bullet 07": {
+          "type": "text",
+          "include_in_all":false,
+          "analyzer": "autocomplete",
+          "search_analyzer": "standard"
+        },
+        "Bullet 08": {
+          "type": "text",
+          "include_in_all":false,
+          "analyzer": "autocomplete",
+          "search_analyzer": "standard"
+        },
+        "Bullet 09": {
+          "type": "text",
+          "include_in_all":false,
+          "analyzer": "autocomplete",
+          "search_analyzer": "standard"
+        },
+        "Bullet 10": {
+          "type": "text",
+          "include_in_all":false,
+          "analyzer": "autocomplete",
+          "search_analyzer": "standard"
+        }
+      }
+    }
+  }
+}
