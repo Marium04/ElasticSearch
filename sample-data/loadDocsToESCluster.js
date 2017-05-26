@@ -1,8 +1,7 @@
 var MongoClient = require('mongodb').MongoClient;
 var elasticsearch = require('elasticsearch');
 var client = new elasticsearch.Client({
-    host: 'localhost:9200',
-    log: 'trace'
+    host: 'localhost:9200'
 });
 // Connection URL
 var url = 'mongodb://localhost:27017/products';
