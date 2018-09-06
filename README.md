@@ -1,4 +1,4 @@
-# Site Search POC
+# Product Catalog Search - Elastic Search
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
@@ -18,3 +18,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 3. Set mappings before loading the data in elastic search using mappings present `sample-data/mappings.json` folder.
 4. Run script `loadDocsToESCluster.js` present in `sample-data` folder using command `node sample-data/loadDocsToESCluster.js`.
 5. Once the script is done loading into cluster, run the command `npm start`.
+6. Once the server is running, you can input different queries to experience the efficiency & accuracy of elastic search. Following are few sample queries you can try:
+- black shirt size s
+- yellow dress 
+- mens shoes size 10
