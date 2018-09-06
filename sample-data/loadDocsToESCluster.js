@@ -5,10 +5,11 @@ var client = new elasticsearch.Client({
 });
 // Connection URL
 var url = 'mongodb://localhost:27017/products';
-MongoClient.connect(url, function(err, db) {
+MongoClient.connect(url,{ useNewUrlParser: true }, function(err, mongodbClient) {
     if (err)
         return res.send({errorMessage: err});
     else
+        var db = mongodbClient.db("products");
         var mongoElasticTransfer = require('mongo-elastic-transfer');
         mongoElasticTransfer.transfer({
             esClient: client,

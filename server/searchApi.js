@@ -46,7 +46,7 @@ fetchResults = function(searchString,callback){
        }
        }*/{
         "query_string": {
-          "default_field": "_all",
+          "default_field": "custom_all",
           "query": searchString,
           "boost": 2,
           "default_operator": "AND",
