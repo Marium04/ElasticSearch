@@ -17,7 +17,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 2. Fire up elasticsearch cluster(follow the instructions on elastic search website to install elastic search locally).
 3. Set mappings before loading the data in elastic search using mappings present `sample-data/mappings.json` folder.
 4. Run script `loadDocsToESCluster.js` present in `sample-data` folder using command `node sample-data/loadDocsToESCluster.js`.
-5. Once the script is done loading into cluster, run the command `npm start`.
+5. Once the script is done loading data into ES cluster, run the command `npm start`.
 6. Once the server is running, you can input different queries to experience the efficiency & accuracy of elastic search. Following are few sample queries you can try:
 - black shirt size s
 - yellow dress 
